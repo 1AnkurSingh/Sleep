@@ -38,24 +38,28 @@ function SleepCycleCalculator() {
       <h1 className="text-3xl font-bold mb-4 text-blue-800">🛏 Sleep Cycle Calculator</h1>
 
       <div className="mb-4">
-        <label className="text-lg font-medium">Enter your bedtime: </label>
-        <input
-          type="time"
-          value={bedtime}
-          onChange={(e) => setBedtime(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              calculateTimes();
-            }
-          }}
-          className="px-3 py-1 border rounded text-lg"
-        />
-        <button
-          onClick={calculateTimes}
-          className="ml-3 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-        >
-          Calculate
-        </button>
+        <label className="text-lg font-medium block mb-2">Enter your bedtime: </label>
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
+          <input
+            type="time"
+            value={bedtime}
+            onChange={(e) => setBedtime(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                calculateTimes();
+              }
+            }}
+            className="px-3 py-1 border rounded text-lg"
+          />
+          <button
+            onClick={calculateTimes}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Calculate
+          </button>
+        </div>
+
         <p className="mt-2 text-sm text-gray-700 italic">
           * Note: A 15-minute buffer is added as it usually takes time to fall asleep.
         </p>
