@@ -43,6 +43,11 @@ function SleepCycleCalculator() {
           type="time"
           value={bedtime}
           onChange={(e) => setBedtime(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              calculateTimes();
+            }
+          }}
           className="px-3 py-1 border rounded text-lg"
         />
         <button
